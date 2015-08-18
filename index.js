@@ -17,7 +17,7 @@ function computeSimilarity(graph) {
     var neighbours = neigboursCache[nodeId];
     if (!neighbours) {
       neighbours = Object.create(null);
-      graph.forEachLinkedNode(nodeId, cacheNeigbour);
+      graph.forEachLinkedNode(nodeId, cacheNeigbour, true);
 
       // flatten it once, and sort so that we can quickly find intersectoin/union
       neighbours = neigboursCache[nodeId] = Object.keys(neighbours).sort();
